@@ -4,12 +4,23 @@
         <button @click.prevent="addTodo" class="btn btn-dark addBtn">
             Add
         </button>
+        <button
+            @click="hideCompleted = !hideCompleted"
+            class="btn btn-dark ms-2"
+        >
+            {{ hideCompleted ? 'Show All' : 'Not Yet' }}
+        </button>
     </div>
     <ul>
         <div class="list">
-            <li v-for="todo in todos" :key="todo.id">
+            <li v-for="todo in filteredTodos" :key="todo.id">
                 <div class="listItem">
-                    <p>{{ todo.text }}</p>
+                    <input
+                        type="checkbox"
+                        v-model="todo.done"
+                        class="mb-2 check"
+                    />
+                    <p :class="{ done: todo.done }">{{ todo.text }}</p>
                     <button
                         @click="removeTodo(todo)"
                         class="btn btn-dark btn-sm removeBtn"
@@ -23,13 +34,20 @@
 </template>
 
 <script setup>
-import { defineModel, ref } from 'vue'
+import { defineModel, ref, computed } from 'vue'
 const newTodo = defineModel()
+const hideCompleted = ref(false)
 let id = 0
 const todos = ref([
-    { id: id++, text: 'Todo1' },
-    { id: id++, text: 'Todo2' }
+    { id: id++, text: 'Todo1', done: true },
+    { id: id++, text: 'Todo2', done: false }
 ])
+
+const filteredTodos = computed(() => {
+    return hideCompleted.value
+        ? todos.value.filter((todo) => !todo.done)
+        : todos.value
+})
 
 function addTodo() {
     if (newTodo.value != '') {
@@ -60,7 +78,7 @@ input {
     margin-left: 10px;
 }
 .list {
-    list-style: circle;
+    list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,5 +88,11 @@ input {
         justify-content: center;
         align-items: center;
     }
+}
+.done {
+    text-decoration: line-through;
+}
+.check {
+    margin: 10px;
 }
 </style>

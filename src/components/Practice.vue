@@ -1,7 +1,7 @@
 <template>
-    <button @click="btnClick" class="btn btn-dark">點我</button>
-    <h1 v-if="result">TRUE</h1>
-    <h1 v-else>FALSE😢</h1>
+    <button @click="btnClick" class="btn btn-dark btn-sm mb-2">點我</button>
+    <h6 v-if="result">TRUE</h6>
+    <h6 v-else>FALSE😢</h6>
 </template>
 
 <script setup>

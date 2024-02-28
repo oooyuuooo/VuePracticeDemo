@@ -1,7 +1,7 @@
 <template>
     <base-layout>
         <template v-slot:header>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">Vue</a>
                     <button
@@ -21,18 +21,8 @@
                     >
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <router-link class="nav-link" to="/"
-                                    >Home</router-link
-                                >
-                            </li>
-                            <li class="nav-item">
                                 <router-link class="nav-link" to="/about"
-                                    >About</router-link
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <router-link class="nav-link" to="/practice"
-                                    >Practice</router-link
+                                    >使用說明</router-link
                                 >
                             </li>
                             <li class="nav-item dropdown">
@@ -43,14 +33,14 @@
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
-                                    Dropdown
+                                    PracticeDemo
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#"
-                                            >Action</a
-                                        >
-                                    </li>
+                                    <router-link
+                                        class="dropdown-item"
+                                        to="/practice"
+                                        >v-if v-for</router-link
+                                    >
                                     <li>
                                         <a class="dropdown-item" href="#"
                                             >Another action</a
@@ -69,7 +59,7 @@
                 </div>
             </nav>
         </template>
-        <router-view />
+        <router-view/>
         <template v-slot:footer>
             <div>
                 <p>小歐的 Vue 練習 之 這裡是 footer</p>
@@ -94,5 +84,32 @@ import BaseLayout from './components/BaseLayout.vue'
 .navbar {
     padding: 5px;
     background: linear-gradient(315deg, #0b346e 25%, #a5dee4);
+}
+.wrapper{
+    margin-top: 90px;
+}
+.myComponent {
+    margin: 30px;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(315deg, #0b346e 25%, #a5dee4);
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.componentContainer {
+    width: calc(100% - 0.1%);
+    height: calc(100% - 0.1%);
+    background: #ffffff;
+    border-radius: 22px;
+    overflow: hidden;
+}
+
+p {
+    font-size: 20px;
+    margin: 10px;
 }
 </style>
