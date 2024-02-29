@@ -34,34 +34,35 @@
 </template>
 
 <script setup>
-import { defineModel, ref, computed } from 'vue'
-const newTodo = defineModel()
-const hideCompleted = ref(false)
-let id = 0
+import { ref, computed } from 'vue';
+const newTodo = ref('');
+const hideCompleted = ref(false);
+let id = 0;
 const todos = ref([
     { id: id++, text: 'Todo1', done: true },
-    { id: id++, text: 'Todo2', done: false }
-])
+    { id: id++, text: 'Todo2', done: false },
+]);
 
 const filteredTodos = computed(() => {
     return hideCompleted.value
         ? todos.value.filter((todo) => !todo.done)
-        : todos.value
-})
+        : todos.value;
+});
 
 function addTodo() {
     if (newTodo.value != '') {
+        console.log(newTodo.value);
         todos.value.push({
             id: id++,
-            text: newTodo.value
-        })
+            text: newTodo.value,
+        });
     } else {
-        alert('請輸入內容')
+        alert('請輸入內容');
     }
-    newTodo.value = ''
+    newTodo.value = '';
 }
 function removeTodo(todo) {
-    todos.value = todos.value.filter((target) => target != todo)
+    todos.value = todos.value.filter((target) => target != todo);
 }
 </script>
 
@@ -83,11 +84,12 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .listItem {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+}
+
+.listItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .done {
     text-decoration: line-through;

@@ -41,17 +41,6 @@
                                         to="/practice"
                                         >v-if v-for</router-link
                                     >
-                                    <li>
-                                        <a class="dropdown-item" href="#"
-                                            >Another action</a
-                                        >
-                                    </li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li>
-                                        <a class="dropdown-item" href="#"
-                                            >Something else here</a
-                                        >
-                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -59,17 +48,17 @@
                 </div>
             </nav>
         </template>
-        <router-view/>
+        <router-view />
         <template v-slot:footer>
             <div>
-                <p>小歐的 Vue 練習 之 這裡是 footer</p>
+                <p>Vue 練習 之 這裡是 footer</p>
             </div>
         </template>
     </base-layout>
 </template>
 
 <script setup>
-import BaseLayout from './components/BaseLayout.vue'
+import BaseLayout from './components/BaseLayout.vue';
 </script>
 
 <style lang="scss">
@@ -85,7 +74,7 @@ import BaseLayout from './components/BaseLayout.vue'
     padding: 5px;
     background: linear-gradient(315deg, #0b346e 25%, #a5dee4);
 }
-.wrapper{
+.wrapper {
     margin-top: 90px;
 }
 .myComponent {

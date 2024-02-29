@@ -2,13 +2,13 @@
     <div class="about">
         <div>
             <p>
-                這個 VUE DEMO 是我的心血哈哈哈<i class="fa-solid fa-pen-fancy"></i>
+                在 PracticeDemo 有不同類型的 DEMO 可以自己選擇想要看的內容<i
+                    class="fa-solid fa-heart"
+                ></i>
             </p>
-            <p>希望能幫到你們<i class="fa-solid fa-heart"></i></p>
-            <p>在 PracticeDemo 有不同類型的 DEMO 可以自己選擇想要看的內容</p>
-            <p>盡量搭配程式碼一起看</p>
+            <p>盡量搭配程式碼一起看<i class="fa-solid fa-pen-fancy"></i></p>
             <p>或是在 Chrome Vue DevTools 看程式碼</p>
-            <p>因為我都是用 不同的元件 去組合在同一個頁面</p>
+            <p>基本上我都是用 不同的元件 組合在同一個頁面</p>
             <p>
                 如果有看不懂 或是寫錯的地方一定要跟我說 或是一起討論<i
                     class="fa-solid fa-rainbow"

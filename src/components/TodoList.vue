@@ -23,27 +23,27 @@
 </template>
 
 <script setup>
-import { defineModel, ref } from 'vue'
-const newTodo = defineModel()
-let id = 0
+import { ref } from 'vue';
+const newTodo = ref('');
+let id = 0;
 const todos = ref([
     { id: id++, text: 'Todo1' },
-    { id: id++, text: 'Todo2' }
-])
+    { id: id++, text: 'Todo2' },
+]);
 
 function addTodo() {
     if (newTodo.value != '') {
         todos.value.push({
             id: id++,
-            text: newTodo.value
-        })
+            text: newTodo.value,
+        });
     } else {
-        alert('請輸入內容')
+        alert('請輸入內容');
     }
-    newTodo.value = ''
+    newTodo.value = '';
 }
 function removeTodo(todo) {
-    todos.value = todos.value.filter((target) => target != todo)
+    todos.value = todos.value.filter((target) => target != todo);
 }
 </script>
 
@@ -65,10 +65,11 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .listItem {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+}
+
+.listItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>
