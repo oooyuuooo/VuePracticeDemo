@@ -41,6 +41,11 @@
                                         to="/practice"
                                         >v-if v-for</router-link
                                     >
+                                    <router-link
+                                        class="dropdown-item"
+                                        to="/formType"
+                                        >表單輸入綁定</router-link
+                                    >
                                 </ul>
                             </li>
                         </ul>
